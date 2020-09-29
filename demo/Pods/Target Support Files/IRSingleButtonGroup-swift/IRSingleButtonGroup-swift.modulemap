@@ -1,0 +1,6 @@
+framework module IRSingleButtonGroup_swift {
+  umbrella header "IRSingleButtonGroup-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - IRSingleButtonGroup-swift (1.0.0)
+
+DEPENDENCIES:
+  - IRSingleButtonGroup-swift
+
+SPEC REPOS:
+  trunk:
+    - IRSingleButtonGroup-swift
+
+SPEC CHECKSUMS:
+  IRSingleButtonGroup-swift: 4610a9c10a6ae7c8fffbdf366ad98bdc36e6a8e5
+
+PODFILE CHECKSUM: ae31b64a9b1431f22ace824607399d1bd84219a0
+
+COCOAPODS: 1.9.3

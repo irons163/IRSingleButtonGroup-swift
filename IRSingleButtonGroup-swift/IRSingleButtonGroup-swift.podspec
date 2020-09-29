@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT"
   spec.author       = "irons163"
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/irons163/IRSingleButtonGroup-swift.git.git", :tag => spec.version.to_s }
+  spec.source       = { :git => "https://github.com/irons163/IRSingleButtonGroup-swift.git", :tag => spec.version.to_s }
 # spec.source       = { :path => '.' }
   spec.source_files  = "IRSingleButtonGroup-swift/Class"
 end

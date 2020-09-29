@@ -1,9 +1,10 @@
 ![Build Status](https://img.shields.io/badge/build-%20passing%20-brightgreen.svg)
 ![Platform](https://img.shields.io/badge/Platform-%20iOS%20-blue.svg)
 
-# IRSingleButtonGroup 
+# IRSingleButtonGroup-swift
 
-- IRSingleButtonGroup is a powerful buttons group framework for iOS.
+- IRSingleButtonGroup-swift is a powerful buttons group framework for iOS.
+- See objc version in here: [IRSingleButtonGroup](https://github.com/irons163/IRSingleButtonGroup).
 
 ## Features
 
@@ -13,7 +14,7 @@
 
 ## Install
 ### Cocoapods
-- Add `pod 'IRSingleButtonGroup'`  in the `Podfile`
+- Add `pod 'IRSingleButtonGroup-swift'`  in the `Podfile`
 - `pod install`
 
 ## Usage
@@ -22,27 +23,27 @@
 
 ### Basic
 
-```obj-c
+```swift
 
-IRSingleButtonGroup* singleButtonGroup = [[IRSingleButtonGroup alloc] init];
-singleButtonGroup.buttons = @[self.button1, self.button2, self.button3];
-singleButtonGroup.delegate = self;
+self.singleButtonGroup = IRSingleButtonGroup.init()
+self.singleButtonGroup.buttons = [self.button1, self.button2, self.button3]
+self.singleButtonGroup.delegate = self
 
-#pragma mark - SingleButtonGroupDelegate
-- (void)didSelectedButton:(UIButton *)button {
-    NSLog(@"Button%ld", button.tag);
+// MARK: - SingleButtonGroupDelegate
+func didSelectedButton(button: UIButton) {
+    NSLog("Button%ld", button.tag)
 }
 
-- (void)didDeselectedButton:(UIButton *)button {
-    NSLog(@"Button%ld", button.tag);
+func didDeselectedButton(button: UIButton) {
+    NSLog("Button%ld", button.tag)
 }
 ```
 
 ### Advanced settings
-```obj-c
-singleButtonGroup.canMultiSelected = NO;
-singleButtonGroup.canSelectWhenSelected = YES;
-[singleButtonGroup setInitSelected:0];
+```swift
+singleButtonGroup.canMultiSelected = false
+singleButtonGroup.canSelectWhenSelected = true
+singleButtonGroup.setInitSelected(selectedButton: button)
 ```
 
 ## Screenshots
