@@ -11,9 +11,12 @@ import IRSingleButtonGroup_swift
 
 class ViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.tableView.register(UINib.init(nibName: "SingleButtonTableViewCell", bundle: nil), forCellReuseIdentifier: SingleButtonTableViewCell.identifier())
     }
 
 // MARK: - UITableViewDataSource
@@ -22,21 +25,24 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SingleButtonTableViewCell.identifier, for: indexPath)
+        let cell: SingleButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: SingleButtonTableViewCell.identifier(), for: indexPath) as! SingleButtonTableViewCell
         
         switch indexPath.row {
         case 0:
-            cell.titleLabel.text = "Single Button Selection Demo
-            cell.setD
-            cell.canMultiSelected = NO
-            cell.disableDeselection = YES
+            cell.titleLabel.text = "Single Button Selection Demo"
+            cell.setDefaultIndex(defaultIndex: 0)
+            cell.canMultiSelected = false
+            cell.disableDeselection = true
         case 1:
-            cell.titleLabel.text = @"Single Button Selection Demo: Deselect able";
-            cell.canMultiSelected = NO;
-        case:
-            cell.titleLabel.text = @"Multi Buttons Selection Demo";
-            cell.canMultiSelected = YES;
+            cell.titleLabel.text = "Single Button Selection Demo: Deselect able"
+            cell.canMultiSelected = false
+        case 2:
+            cell.titleLabel.text = "Multi Buttons Selection Demo"
+            cell.canMultiSelected = true
+        default: break
         }
+        
+        return cell
     }
 }
 

@@ -20,18 +20,20 @@ class SingleButtonTableViewCell: UITableViewCell, IRSingleButtonGroupDelegate {
             return singleButtonGroup.canMultiSelected
         }
     }
-    var disableDeselection: Bool
+    var disableDeselection: Bool = false
     {
         didSet
         {
-            singleButtonGroup.canSelectWhenSelected = disableDeselection
+            singleButtonGroup.canSelectWhenSelected = !disableDeselection
         }
     }
+    
     func setDefaultIndex(defaultIndex: NSInteger) {
         self.singleButtonGroup.setInitSelected(selectedButton: singleButtonGroup.buttons[defaultIndex])
     }
+    
     class func identifier() -> String {
-        
+        return String(describing: SingleButtonTableViewCell.self)
     }
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -40,7 +42,7 @@ class SingleButtonTableViewCell: UITableViewCell, IRSingleButtonGroupDelegate {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
-    var singleButtonGroup: IRSingleButtonGroup
+    var singleButtonGroup: IRSingleButtonGroup!
     
     override func awakeFromNib() {
         super.awakeFromNib()
